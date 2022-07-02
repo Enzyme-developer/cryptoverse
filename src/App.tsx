@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Account from './components/Account';
+import News from './components/News';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path='/signin' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/account' element={<Account />} />
+          <Route path='/news' element={<News />} />
         </Routes>
         
         <Footer />
