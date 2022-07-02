@@ -54,6 +54,10 @@ const Navbar = () => {
           <li onClick={handleNav} className='border-b border-slate-400 py-6 dark:border-white'>
             <Link to='/account'>Account</Link>
           </li>
+
+          <li onClick={handleNav} className='border-b border-slate-400 py-6 dark:border-white'>
+            <Link to='/news'>News</Link>
+          </li>
        
 
         {!user?.email ? (
@@ -80,12 +84,15 @@ const Navbar = () => {
       {user?.email ? (
         <div className='hidden md:block space-x-4 font-bold'>
           <Link to='/account' className='p-3 rounded-2xl shadow-lg hover:shadow-2xl'>Account</Link>
+          <Link to='/news' className='p-3 rounded-2xl shadow-lg hover:shadow-2xl'>News</Link>
           <button className='rounded-2xl shadow-lg p-3 hover:shadow-2xl border-none outline-none' onClick={handleSignOut}>Sign out</button>
         </div>
       ) : (
-        <div className='hidden md:block space-x-4 font-bold'>
-          <Link to='/signin' className='rounded-2xl shadow-lg hover:shadow-2xl px-3 py-2 bg-yellow-400 outline-none'>Sign In</Link>
-          <Link to='/signup' className='rounded-2xl shadow-lg hover:shadow-2xl px-3 py-2 bg-blue-600 text-white outline-none'>Sign Up</Link>
+          <div className='hidden md:block space-x-4 font-bold'>
+            <Link to='/account' className='p-3 rounded-2xl shadow-lg hover:shadow-2xl'>Account</Link>
+            <Link to='/news' className='p-3 rounded-2xl shadow-lg hover:shadow-2xl'>News</Link>
+            <Link to='/signin' className='rounded-2xl shadow-lg hover:shadow-2xl px-3 py-2 bg-yellow-400 outline-none'>Sign In</Link>
+            <Link to='/signup' className='rounded-2xl shadow-lg hover:shadow-2xl px-3 py-2 bg-blue-600 text-white outline-none'>Sign Up</Link>
         </div>
 
       )}

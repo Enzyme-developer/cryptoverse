@@ -39,7 +39,7 @@ function App() {
   // if (loading) return <h1>Loading...</h1>
 
   return (
-    <div className='dark:bg-black dark:text-white  relative flex flex-col' >
+    <div className='dark:bg-black dark:text-white relative flex flex-col min-h-screen' >
     <ThemeProvider>
       <AuthContextProvider>
         <Navbar />
