@@ -88,7 +88,7 @@ const TrendingNews = () => {
                 },
                 headers: {
                   'X-BingApis-SDK': 'true',
-                  'X-RapidAPI-Key': 'e4a857be5cmsh09ebc54b46beaa4p127d24jsnd3c58aaa2a16',
+                  'X-RapidAPI-Key': process.env.REACT_APP_NEWS_API_KEY,
                   'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
                 }
               };
