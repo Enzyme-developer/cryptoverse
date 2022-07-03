@@ -29,7 +29,13 @@ interface Propsb {
     method: string;
     url: string;
     params: {
-        count: string; setLang: string; safeSearch: string; textFormat: string;
+        category: string;
+        cc: string;
+        mkt: string;
+        setLang: string;
+        safeSearch: string;
+        textFormat: string;
+        count: string;
  
 };
 headers: {
@@ -68,17 +74,24 @@ const TrendingNews = () => {
               });
             
         } else {
-            const options :Propsb = {
+            const options : Propsb = {
                 method: 'GET',
                 url: 'https://bing-news-search1.p.rapidapi.com/news',
-                params: {count: '12', setLang: 'EN', safeSearch: 'Off', textFormat: 'Raw'},
+                params: {
+                  count: '12',
+                  category: 'Business',
+                  cc: 'us',
+                  mkt: ' en-US',
+                  setLang: ' EN ',
+                  safeSearch: 'Off',
+                  textFormat: 'Raw'
+                },
                 headers: {
-                    'X-BingApis-SDK': 'true',
-                    'X-Search-Location': 'us',
-                    'X-RapidAPI-Key': process.env.REACT_APP_NEWS_API_KEY,
-                    'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+                  'X-BingApis-SDK': 'true',
+                  'X-RapidAPI-Key': 'e4a857be5cmsh09ebc54b46beaa4p127d24jsnd3c58aaa2a16',
+                  'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
                 }
-                };
+              };
         
             axios.request(options).then(function (response) {console.log(response.data)
                 console.log(response.data)
@@ -105,8 +118,8 @@ const TrendingNews = () => {
           
           {trending.map((trend : any) => (
             <div key={trend?.name} className=' rounded-lg flex flex-col md:max-w-[300px] w-full border shadow-2xl cursor-pointer'>
-                <img className='w-full max-h-[180px] min-h-[180px]' src={trend?.image?.thumbnail?.contentUrl} alt={trend.name} />
-                <p className='flex font-bold p-2'>{trend?.name.slice(0,50)}...</p>
+                <img className='rounded-lg w-full max-h-[180px] min-h-[180px]' src={trend?.image?.thumbnail?.contentUrl} alt={trend.name} />
+                <p className='flex font-bold p-2'>{trend?.name.slice(0,100)}...</p>
                 <p className='font-bold p-2'>{trend?.datePublished.toString().slice(0,10)}</p>
                   {/* <p>{trend.description.slice(0,80)}</p> */}
                 <a target="_blank" rel="noopener noreferrer" href={trend?.url}>
