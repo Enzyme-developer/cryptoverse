@@ -29,6 +29,7 @@ const Coin = ({ coin } : Props) => {
           rank: coin.market_cap_rank,
           symbol: coin.symbol,
         }),
+        alert('Please sign in to save a coin to your watch list');
       });
 
     } else {
